@@ -70,7 +70,6 @@ public class Sign {
                 students.setName(sheet.getRow(i).getCell(0).toString());
                 int a =0;
                 int b =0;
-                int c =0;
                 int d =0;
                     for (int j = 19; j < sheet.getRow(0).getPhysicalNumberOfCells(); j++) {
                         if (stringBuffers.toString().contains(sheet.getRow(i).getCell(0).toString())){
@@ -79,19 +78,16 @@ public class Sign {
                         }
                         a+=Count(sheet.getRow(i).getCell(j).toString(),"出差");
                         b+=Count(sheet.getRow(i).getCell(j).toString(),"迟到");
-                        c=Count(sheet.getRow(i).getCell(j).toString(),"早退");
                         d+=Count(sheet.getRow(i).getCell(j).toString(),"缺卡");
                         if (j==21 || j==23){
                         b-=Count(sheet.getRow(i).getCell(j).toString(),"3迟到");
-                        c-=Count(sheet.getRow(i).getCell(j).toString(),"3早退");
                         d-=Count(sheet.getRow(i).getCell(j).toString(),"3缺卡");
                         }
                     }
                 students.setEvection(a);
                 students.setLate(b);
-                students.setLeave(c);
                 students.setLose(d);
-                students.setNormal(26-b-c-d);
+                students.setNormal(26-d);
                 list.add(students);
             }
         } catch (FileNotFoundException e) {
@@ -118,21 +114,19 @@ public class Sign {
         HSSFRow row = sheet.createRow(0);
         row.createCell(0).setCellValue("姓名");
         row.createCell(1).setCellValue("迟到");
-        row.createCell(2).setCellValue("早退");
-        row.createCell(3).setCellValue("缺卡");
-        row.createCell(4).setCellValue("出差/请假");
-        row.createCell(5).setCellValue("正常");
-        row.createCell(6).setCellValue("出勤率");
+        row.createCell(2).setCellValue("缺卡");
+        row.createCell(3).setCellValue("出差/请假");
+        row.createCell(4).setCellValue("正常");
+        row.createCell(5).setCellValue("出勤率");
         for (int i = 0;i<list.size();++i){
             Students students = list.get(i);
             HSSFRow row1 = sheet.createRow(i+1);
             row1.createCell(0).setCellValue(students.getName());
             row1.createCell(1).setCellValue(students.getLate());
-            row1.createCell(2).setCellValue(students.getLeave());
-            row1.createCell(3).setCellValue(students.getLose());
-            row1.createCell(4).setCellValue(students.getEvection());
-            row1.createCell(5).setCellValue(students.getNormal());
-            row1.createCell(6).setCellValue(students.attendrat());
+            row1.createCell(2).setCellValue(students.getLose());
+            row1.createCell(3).setCellValue(students.getEvection());
+            row1.createCell(4).setCellValue(students.getNormal());
+            row1.createCell(5).setCellValue(students.attendrat());
         }
         try {
             FileOutputStream fos = new FileOutputStream(".\\src\\com\\main\\Sign\\上海海洋大学智慧海洋_考勤报表_20200106-20200110.xls");

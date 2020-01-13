@@ -11,7 +11,6 @@ package Sign;
 public class Students {
     private String name = "未知";
     private int late = 0;   //迟到
-    private int leave = 0;  //早退
     private int lose = 0; //缺卡
     private int evection = 0; //出差
     private int normal = 26; //正常
@@ -21,7 +20,6 @@ public class Students {
         return "Students{" +
                 "name='" + name + '\'' +
                 ", late=" + late +
-                ", leave=" + leave +
                 ", lose=" + lose +
                 ", evection=" + evection +
                 ", normal=" + normal +
@@ -50,14 +48,6 @@ public class Students {
 
     public void setLate(int late) {
         this.late = late;
-    }
-
-    public int getLeave() {
-        return leave;
-    }
-
-    public void setLeave(int leave) {
-        this.leave = leave;
     }
 
     public int getLose() {
