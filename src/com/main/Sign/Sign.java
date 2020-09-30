@@ -1,4 +1,4 @@
-package Sign;
+package com.main.Sign;
 
 import java.io.*;
 import java.lang.reflect.Array;
@@ -27,7 +27,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class Sign {
     public static void main(String[] args) throws IOException {
-        File file = new File(".\\src\\com\\main\\Sign\\上海海洋大学智慧海洋_考勤报表_20200106-20200110.xlsx");
+        File file = new File(".\\src\\com\\main\\Sign\\上海海洋大学智慧海洋_考勤报表_20200929-20200930.xlsx");
         File holidaies = new File(".\\src\\com\\main\\Sign\\leave.xlsx");
 
         //请假出差人员
@@ -129,7 +129,7 @@ public class Sign {
             row1.createCell(5).setCellValue(students.attendrat());
         }
         try {
-            FileOutputStream fos = new FileOutputStream(".\\src\\com\\main\\Sign\\上海海洋大学智慧海洋_考勤报表_20200106-20200110.xls");
+            FileOutputStream fos = new FileOutputStream(".\\src\\com\\main\\Sign\\统计结果.xls");
             workbook.write(fos);
             System.out.println("写入成功！");
             fos.close();
