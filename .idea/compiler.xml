@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sign" />
         <module name="Attendance-statistics" />
+        <module name="Sign" />
       </profile>
     </annotationProcessing>
   </component>
