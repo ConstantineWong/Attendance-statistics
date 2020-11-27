@@ -14,7 +14,7 @@ public class Students {
     private int lose = 0; //缺卡
     private int evection = 0; //出差
     private int absenteeism = 0; //旷工
-    private int normal = 26; //正常
+    private int normal = 10; //正常
 
     @Override
     public String toString() {
@@ -89,6 +89,6 @@ public class Students {
     }
 
     public double attendrat(){
-        return (double) (this.normal+this.late)/26;
+        return (double) (this.normal+this.late)/10;
     }
 }
