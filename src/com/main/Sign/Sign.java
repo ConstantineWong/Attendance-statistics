@@ -27,8 +27,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class Sign {
     public static void main(String[] args) throws IOException {
-        String dingding = "上海海洋大学智慧海洋_考勤报表_20210308-20210312";
-        String leave = "leave20210308-20210312";
+        String dingding = "上海海洋大学智慧海洋_考勤报表_20210322-20210326";
+        String leave = "leave20210322-20210326";
         String white_list = "白名单";
         String gradeOne_str="研一同学";
         int day = 5;    //统计的天数
